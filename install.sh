@@ -58,8 +58,8 @@ python3.8 -m venv virtualenv/cosimul
 source virtualenv/cosimul/bin/activate
 pip install "setuptools<81"
 pip install "numpy<1.24"
-pip install "mosaik<3.1"
-# pip install "mosaik<3"
+# pip install "mosaik<3.1"
+pip install "mosaik<3"
 pip install tables
 pip install scipy
 pip install matplotlib

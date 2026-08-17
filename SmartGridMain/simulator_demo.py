@@ -22,11 +22,14 @@ import time
 import numpy as np
 
 #--- Performance test for Mosaik 2 vs Mosaik 3
-Mosaik_2 = False
+Mosaik_2 = True
 #--- Scenario selection:
 #--- 1. Tap Control with IEEE13
 #--- 2. State Estimation with IEEE33 and secondary test feeders
-Scenario = 2
+Scenario = 1
+
+# Scalable simulator count
+Scaler = 3
 
 #--- Base Directory
 BASE_DIR = os.getcwd()
@@ -110,6 +113,15 @@ else:
             'python': 'simulator_dse:Estimator',       
         },
     }
+
+if Mosaik_2:
+    for simIdx in range(Scaler):
+        SIM_CONFIG[f'Sender{simIdx}'] = {
+            'python': 'sender_2:SenderSim',
+        }
+        SIM_CONFIG[f'Receiver{simIdx}'] = {
+            'python': 'receiver_2:ReceiverSim',
+        }
 
 #--- Simulation total time
 # END_TIME =  10000	#  10 secs
@@ -246,6 +258,16 @@ def  create_scenario( world, args ):
             network         = "P2P",
             topology        = "IEEE13"  # For now only IEEE13 and IEEE33
         )
+
+        sendersims = []
+        receiversims = []
+        for simIdx in range(Scaler):
+            sendersims.append(world.start(
+                'Sender' + str(simIdx), verbose = 0
+            ))
+            receiversims.append(world.start(
+                'Receiver' + str(simIdx), verbose = 0
+            ))
     else:
         estimator  = world.start('Estimator',
                 eid_prefix = 'DSESim_',
@@ -570,7 +592,11 @@ def  create_scenario( world, args ):
                 if (controller_instance == controller.eid):
                     for transporter in transporters:
                         if (transporter_instance == transporter.eid):
-                            world.connect(controller, transporter, 'v', 't',
+                            if (Mosaik_2):
+                                world.connect(controller, transporter, 'v', 't',
+                                          time_shifted=True, initial_data={'v': [None], 't': [None]})
+                            else:
+                                world.connect(controller, transporter, 'v', 't',
                                           weak=True, initial_data={'v': [None], 't': [None]})
                             print('Connect', controller.eid, 'to', transporter.eid)
         
@@ -579,7 +605,11 @@ def  create_scenario( world, args ):
                 if (actuator_instance == actuator.eid):
                     for transporter in transporters:
                         if (transporter_instance == transporter.eid):
-                            world.connect(transporter, actuator, 'v', 't',
+                            if (Mosaik_2):
+                                world.connect(transporter, actuator, 'v', 't',
+                                time_shifted=True, initial_data={'v': [None], 't': [None]})
+                            else:
+                                world.connect(transporter, actuator, 'v', 't',
                                 weak=True, initial_data={'v': [None], 't': [None]})
                             print('Connect', transporter.eid, 'to', actuator.eid)
 
@@ -674,6 +704,31 @@ def  create_scenario( world, args ):
     # if Scenario == 2:
     #     #--- DSESim to Monitor
     #     world.connect(dsesim, monitor, 'v', 't')
+
+    ## Scaling simulator configuration - manual only for testing
+    if Scenario == 1 and Mosaik_2 == True:
+        test_clients = ['646', '645', '632', '633', '634']
+        test_servers = ['611', '684', '671', '692', '675']
+        for simIdx in range(Scaler):
+            sender = sendersims[simIdx].Sender(
+                eid = "Sender" + str(simIdx) + "_" + test_clients[simIdx],
+                location = test_clients[simIdx],
+                period = 200
+            )
+            receiver = receiversims[simIdx].Receiver(
+                eid = "Receiver" + str(simIdx) + "_" + test_servers[simIdx],
+                location = test_servers[simIdx]
+            )
+            transporter = pktnetsim.Transporter(
+                src=test_clients[simIdx],
+                dst=test_servers[simIdx],
+                eid="Transp_" + test_clients[simIdx] + "_" + test_servers[simIdx]
+            )
+            world.connect(sender, transporter, 'v', 't')
+            print('Connect', sender.eid, 'to', transporter.eid)
+            world.connect(transporter, receiver, 'v', 't')
+            print('Connect', transporter.eid, 'to', receiver.eid)
+
         
 
 if __name__ == '__main__':
