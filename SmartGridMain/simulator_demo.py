@@ -22,11 +22,11 @@ import time
 import numpy as np
 
 #--- Performance test for Mosaik 2 vs Mosaik 3
-Mosaik_2 = True
+Mosaik_2 = False
 #--- Scenario selection:
 #--- 1. Tap Control with IEEE13
 #--- 2. State Estimation with IEEE33 and secondary test feeders
-Scenario = 1
+Scenario = 2
 
 # Scalable simulator count
 Scaler = 3
@@ -121,6 +121,14 @@ if Mosaik_2:
         }
         SIM_CONFIG[f'Receiver{simIdx}'] = {
             'python': 'receiver_2:ReceiverSim',
+        }
+else:
+    for simIdx in range(Scaler):
+        SIM_CONFIG[f'Sender{simIdx}'] = {
+            'python': 'sender_3:SenderSim',
+        }
+        SIM_CONFIG[f'Receiver{simIdx}'] = {
+            'python': 'receiver_3:ReceiverSim',
         }
 
 #--- Simulation total time
@@ -259,15 +267,6 @@ def  create_scenario( world, args ):
             topology        = "IEEE13"  # For now only IEEE13 and IEEE33
         )
 
-        sendersims = []
-        receiversims = []
-        for simIdx in range(Scaler):
-            sendersims.append(world.start(
-                'Sender' + str(simIdx), verbose = 0
-            ))
-            receiversims.append(world.start(
-                'Receiver' + str(simIdx), verbose = 0
-            ))
     else:
         estimator  = world.start('Estimator',
                 eid_prefix = 'DSESim_',
@@ -300,6 +299,15 @@ def  create_scenario( world, args ):
                     h5_panelname = 'Collector',
                     h5_storename ='CollectorStore.hd5')
 
+    sendersims = []
+    receiversims = []
+    for simIdx in range(Scaler):
+        sendersims.append(world.start(
+            'Sender' + str(simIdx), verbose = 0
+        ))
+        receiversims.append(world.start(
+            'Receiver' + str(simIdx), verbose = 0
+        ))
  
     #---
     #--- Simulators Instances configuration
@@ -314,12 +322,14 @@ def  create_scenario( world, args ):
     smartmeters = []
     phasors = []
     created_estimator_conn = []
+    test_clients = []
     for key in devParams.keys():
         device          = devParams[key]['device']
         client          = devParams[key]['src']
         server          = devParams[key]['dst']
         control_loop    = devParams[key]['cidx']
         namespace       = devParams[key]['didx']
+        test_clients.append(client)
         #--- Sensor instances
         if (device == 'Sensor'):
             sensor_instance = device + '_' + client + '-' + server \
@@ -706,28 +716,26 @@ def  create_scenario( world, args ):
     #     world.connect(dsesim, monitor, 'v', 't')
 
     ## Scaling simulator configuration - manual only for testing
-    if Scenario == 1 and Mosaik_2 == True:
-        test_clients = ['646', '645', '632', '633', '634']
-        test_servers = ['611', '684', '671', '692', '675']
-        for simIdx in range(Scaler):
-            sender = sendersims[simIdx].Sender(
-                eid = "Sender" + str(simIdx) + "_" + test_clients[simIdx],
-                location = test_clients[simIdx],
-                period = 200
-            )
-            receiver = receiversims[simIdx].Receiver(
-                eid = "Receiver" + str(simIdx) + "_" + test_servers[simIdx],
-                location = test_servers[simIdx]
-            )
-            transporter = pktnetsim.Transporter(
-                src=test_clients[simIdx],
-                dst=test_servers[simIdx],
-                eid="Transp_" + test_clients[simIdx] + "_" + test_servers[simIdx]
-            )
-            world.connect(sender, transporter, 'v', 't')
-            print('Connect', sender.eid, 'to', transporter.eid)
-            world.connect(transporter, receiver, 'v', 't')
-            print('Connect', transporter.eid, 'to', receiver.eid)
+    total_clients = len(test_clients) - 1
+    for simIdx in range(Scaler):
+        sender = sendersims[simIdx].Sender(
+            eid = "Sender" + str(simIdx) + "_" + test_clients[simIdx],
+            location = test_clients[simIdx],
+            period = 200
+        )
+        receiver = receiversims[simIdx].Receiver(
+            eid = "Receiver" + str(simIdx) + "_" + test_clients[total_clients - simIdx],
+            location = test_clients[total_clients - simIdx]
+        )
+        transporter = pktnetsim.Transporter(
+            src = test_clients[simIdx],
+            dst = test_clients[total_clients - simIdx],
+            eid = "Transp_" + test_clients[simIdx] + "_" + test_clients[total_clients - simIdx]
+        )
+        world.connect(sender, transporter, 'v', 't')
+        print('Connect', sender.eid, 'to', transporter.eid)
+        world.connect(transporter, receiver, 'v', 't')
+        print('Connect', transporter.eid, 'to', receiver.eid)
 
         
 
