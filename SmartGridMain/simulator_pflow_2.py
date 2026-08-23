@@ -395,6 +395,7 @@ class PFlowSim(mosaik_api.Simulator):
         self.instances = {}
         self.step_size = 1
         self.loadgen_interval = self.step_size
+        self.event_count = 0
 
     def init(self, sid, topofile, nwlfile, ilpqfile, step_size, scenario, loadgen_interval, verbose=0):	
         self.sid = sid       
@@ -586,6 +587,7 @@ class PFlowSim(mosaik_api.Simulator):
                 if (value_v != 'None' and value_v != None):
                     if (self.verbose > 1): print('simulator_pflow::step Propagation delay =', time - value_t)
                     self.instances[eid].setControl(value_v, time)
+                    self.event_count = self.event_count + 1
             
         #--- 
         #--- get new set of sensor data from OpenDSS
@@ -595,6 +597,7 @@ class PFlowSim(mosaik_api.Simulator):
                 (instance_eid.find("Phasor") > -1) or \
                 (instance_eid.find("SmartMeter") > -1):
                 self.instances[instance_eid].updateValues(time)
+                self.event_count + 1
         
         #--- 
         #--- get new set of prober data from OpenDSS
@@ -602,6 +605,7 @@ class PFlowSim(mosaik_api.Simulator):
         for instance_eid in self.instances:
             if(instance_eid.find("Prober") > -1)  :
                 self.instances[instance_eid].updateValues(time)
+                self.event_count + 1
 
         if(self.verbose > 1):
             print('simulator_pflow::step next_step = ', self.next_step)
@@ -664,5 +668,6 @@ class PFlowSim(mosaik_api.Simulator):
 #         self.dssObj.showIinout()
         print("simulator_pflow::finalize:total execution time = ", self.total_exec_time)
         print("simulator_pflow::finalize:total steps = ", self.step_count)
+        print("simulator_pflow::finalize:total events = ", self.event_count)
         sys.stdout.flush()
 

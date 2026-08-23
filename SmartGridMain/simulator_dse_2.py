@@ -53,6 +53,7 @@ class Estimator(mosaik_api.Simulator):
         self.MsgCount  = 0
         self.total_exec_time = 0.0
         self.total_steps = 0
+        self.event_count = 0
 
         return self.meta
 
@@ -257,6 +258,8 @@ class Estimator(mosaik_api.Simulator):
                         spio.savemat(self.entities[dse_eid]['se_result'], mat)
                 else:
                     spio.savemat(self.entities[dse_eid]['se_result'], {array_name: v_wls})
+
+                self.event_count = self.event_count + 1
 
         end = datetime.datetime.now()
         self.total_exec_time = self.total_exec_time + (end - start).total_seconds()
@@ -680,4 +683,5 @@ class Estimator(mosaik_api.Simulator):
     def finalize(self):
         print("Estimator::finalize:total execution time = ", self.total_exec_time)
         print("Estimator::finalize:total steps = ", self.total_steps)
+        print("Estimator::finalize:total events = ", self.event_count)
         sys.stdout.flush()

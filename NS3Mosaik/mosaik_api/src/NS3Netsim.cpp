@@ -901,10 +901,10 @@ NS3Netsim::runUntil(uint64_t time, string nextStop)
     #endif
     //--- "+1" because NS3 executes until a given time (not including)
     if (runUntil_time < (uint64_t)stopTime-1)
-      sim->RunUntil(MilliSeconds(runUntil_time + 1));
+      sim->RunUntil(MilliSeconds(runUntil_time + 1), eventCount);
     //--- Do not execute end time events to avoid socket wait problem
     else
-      sim->RunUntil(MilliSeconds((uint64_t)stopTime-1));
+      sim->RunUntil(MilliSeconds((uint64_t)stopTime-1), eventCount);
 
     if (verbose > 3)
     {

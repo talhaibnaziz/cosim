@@ -42,6 +42,7 @@ class ControlSim(mosaik_api.Simulator):
         self.instances = {}
         self.time = 0
         self.eventQueue = queue.PriorityQueue()
+        self.event_count = 0
         
     def init(self, sid, verbose=0):
         self.sid = sid
@@ -127,6 +128,7 @@ class ControlSim(mosaik_api.Simulator):
                     
                     #--- time
                     self.data[controller_eid]['t'].append(time)
+                    self.event_count = self.event_count + 1
 
         if (self.verbose > 3): print('simulator_controller::step after DATA: ', self.data)
         
@@ -168,11 +170,16 @@ class ControlSim(mosaik_api.Simulator):
             self.instances[controller][instance] = parameters
 
 
-#     def finalize(self):
-#         print('Controller Params:')
-#         for key in self.entities.keys():
-#             controller_name = "Control_" +  self.entities[key]['idt']
-#             print(controller_name, ": ", "Min =", self.entities[key]['min'], " -- Max =", self.entities[key]['max'])
+    def finalize(self):
+        # print('Controller Params:')
+        # for key in self.entities.keys():
+        #     controller_name = "Control_" +  self.entities[key]['idt']
+        #     print(controller_name, ": ", "Min =", self.entities[key]['min'], " -- Max =", self.entities[key]['max'])
+
+        print("simulator_controller::finalize:total execution time = ", self.total_exec_time)
+        print("simulator_controller::finalize:total steps = ", self.step_count)
+        print("simulator_controller::finalize:total events = ", self.event_count)
+        sys.stdout.flush()
             
 
     

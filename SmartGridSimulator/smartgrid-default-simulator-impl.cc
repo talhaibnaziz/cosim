@@ -467,7 +467,7 @@ SmartgridDefaultSimulatorImpl::RemoveNextEvent(void) const
 }
 
 void
-SmartgridDefaultSimulatorImpl::RunUntil (const Time &checkTime)
+SmartgridDefaultSimulatorImpl::RunUntil (const Time &checkTime, long long &eventCount)
 {
 	  NS_LOG_FUNCTION (this);
 	  // Set the current threadId as the main threadId
@@ -478,6 +478,7 @@ SmartgridDefaultSimulatorImpl::RunUntil (const Time &checkTime)
 	  while (!m_events->IsEmpty () && !m_stop && NextTs () < (uint64_t)checkTime.GetInteger())
 		{
 		  ProcessOneEvent ();
+      eventCount++;
 		}
 
 	  // If the simulator stopped naturally by lack of events, make a

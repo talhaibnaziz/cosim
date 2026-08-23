@@ -87,7 +87,7 @@ public:
 
   // Smartgrid methods
   uint64_t NextTs (void) const;
-  void RunUntil (const Time &checkTime);
+  void RunUntil (const Time &checkTime, long long &eventCount);
   Time Next (void) const;
 
 

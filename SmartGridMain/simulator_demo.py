@@ -22,7 +22,7 @@ import time
 import numpy as np
 
 #--- Performance test for Mosaik 2 vs Mosaik 3
-Mosaik_2 = False
+Mosaik_2 = True
 #--- Scenario selection:
 #--- 1. Tap Control with IEEE13
 #--- 2. State Estimation with IEEE33 and secondary test feeders

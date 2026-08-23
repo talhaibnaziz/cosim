@@ -174,13 +174,13 @@ void MosaikSim::mainLoop(void)
   {
     try
     {
+      auto start = std::chrono::system_clock::now();
 
       //--- reset the mainLoop operation result
       mosaikLastMsgOp = SUCCESS;
 
       //--- Read Messages form the Socket
       messages = readSocket();
-      auto start = std::chrono::system_clock::now();
 
       //--- Deserialize the messages and get message Id
       jsonMessage = deserialize(messages, currentMsgId);
@@ -195,13 +195,10 @@ void MosaikSim::mainLoop(void)
 
       if (verbose > 1)
         std::cout << "MosaikSim::mainLoop ***** MSG SENT !! *****" << std::endl;
-      
-      if (jsonMessage[0].asString() == "step" || jsonMessage[0].asString() == "get_data")
-      {
-        auto end = std::chrono::system_clock::now();
-        std::chrono::duration<double> diff = end - start;
-        total_exec_time += diff.count();
-      }
+        
+      auto end = std::chrono::system_clock::now();
+      std::chrono::duration<double> diff = end - start;
+      total_exec_time += diff.count();
     }
     catch (std::exception &e)
     {
@@ -1000,193 +997,6 @@ MosaikSim::get_data(Json::Value args, Json::Value kwargs)
   return result;
 }
 
-
-//---
-//--- Method is not used for the current simulation
-//--- If, used, need to be be rewritten together with step and get_data
-//---
-// void
-// MosaikSim::set_data(void)
-// {
-//   Json::Value obj;
-//   Json::Value objSim;
-//   Json::Value objRes;
-//   Json::StreamWriterBuilder wbuilder;
-
-//   std::string result;
-//   MosaikNextSimul nsimul;
-
-//   std::string val_s;
-//   std::string val_d;
-//   std::string val_v;
-//   std::string val_t;
-
-//   if (verbose > 1) {
-//       std::cout << "MosaikSim::set_data" << std::endl;
-//     }
-
-//   //--- create simulator full name
-//   std::string full_name;
-//   full_name.append(mosaikSid);
-//   full_name.append(".");
-//   full_name.append(netsimProp.instance_name);
-
-//   std::string cmd = "set_data";
-//   obj[0] = Json::Value(cmd);
-
-//   //--- verify if there is nothing to send
-//   if (objNetsim->checkEmptyDataOutput() == 1)
-//     {
-//       if (verbose > 2)
-//         std::cout << "MosaikSim::set_data NO output data on NS3 !! " << std::endl;
-
-//       objRes.clear();
-
-//       //--- create dummy entries to send
-//       for (auto it = mosaikNSimul.begin(); it != mosaikNSimul.end(); it++ ){
-//           nsimul = (*it).second;
-
-//           if (verbose > 2)
-//             std::cout << "MosaikSim::set_data nsimul.target_name: " << nsimul.target_name << std::endl;
-
-//           for (uint i = 0; i < (nsimul.target_vars).size(); ++i)
-//             {
-//               if (!nsimul.target_vars[i].empty())
-//                 objRes[nsimul.target_name][nsimul.target_vars[i]] = "null";
-//             }
-
-//         }
-
-//       objSim[full_name] = objRes;
-
-//     } else {  //--- if there is something in the output buffer, process them
-
-//       if (verbose > 2)
-//         std::cout << "MosaikSim::set_data THERE ARE output data on NS3 !! " << std::endl;
-
-//       //--- extract data
-//       objRes.clear();
-//       while (objNetsim->checkEmptyDataOutput() != 1)
-//         {
-//           objNetsim->get_data(val_s, val_d, val_v, val_t);
-
-//           if (verbose > 2)
-//             {
-//               std::cout << "MosaikSim::set_data --OUT from NS3-- "
-//                         << " src = "   << val_s
-//                         << " dst = "   << val_d
-//                         << " value = " << val_v
-//                         << " time = "  << val_t
-//                         << std::endl;
-//             }
-
-//           objRes[mosaikNSimul[val_d].target_name]["s"] = val_s;
-//           objRes[mosaikNSimul[val_d].target_name]["d"] = val_d;
-//           objRes[mosaikNSimul[val_d].target_name]["v"] = stod(val_v);
-//           objRes[mosaikNSimul[val_d].target_name]["t"] = stod(val_t);
-
-//         }
-
-//       objSim[full_name] = objRes;
-//     }
-
-//   obj[1].append(objSim);
-//   objRes.clear();
-//   obj[2] = objRes;
-
-//   //--- prepare result to send to Mosaik
-//   result = Json::writeString(wbuilder, obj);
-
-//   if (verbose > 1) {
-//       Json::FastWriter fastWriter;
-//       std::string output = fastWriter.write(result);
-//       std::cout << "MosaikSim::set_data OUTPUT  = \n" << result << std::endl;
-//     }
-
-//   sendRequest(result);
-
-// }
-
-
-//---
-//--- Method is not used for the current simulation
-//--- If, used, need to be rewritten together with step and get_data
-//---
-// std::string
-// MosaikSim::set_next(Json::Value args, Json::Value kwargs)
-// {
-//   if (verbose > 1)
-//     std::cout << "MosaikSim::set_next kwargs = \n" << kwargs << std::endl;
-
-//   std::string param;
-//   MosaikNextSimul nsimul;
-//   std::string node;
-
-//   std::vector<std::string> pextra = kwargs.getMemberNames();
-//   for ( auto pex_i = pextra.begin(); pex_i != pextra.end(); pex_i++ ){
-//       std::string param = *pex_i;
-
-//       //--- case target_name
-//       if (param.compare("target_name") == 0)
-//         {
-//           nsimul.target_name = (kwargs[param]).asString();
-
-//           if (verbose > 2)
-//             std::cout << "MosaikSim::set_next nsimul.target_name: " << nsimul.target_name << std::endl;
-
-//           //--- extract destination node name
-//           std::string attr;
-//           const char delim_pt = '.';
-//           const char delim_tr = '_';
-//           std::vector<std::string> out;
-//           std::vector<std::string>::iterator it;
-//           std::string instance;
-
-//           attr = nsimul.target_name;
-//           tokenize(attr, delim_pt, out);
-//           it = out.begin(); ++it;
-//           instance = (*it);
-
-//           if (verbose > 2)
-//             std::cout << "MosaikSim::set_next instance: " << instance << std::endl;
-
-//           attr = instance;
-//           out.clear();
-//           tokenize(attr, delim_tr, out);
-//           it = out.begin(); ++it;
-//           node = (*it);
-
-//           if (verbose > 2)
-//             std::cout << "MosaikSim::set_next node: " << node << std::endl;
-//         }
-
-//       //--- case target_vars
-//       if (param.compare("target_vars") == 0)
-//         {
-//           for (uint i = 0; i < (kwargs[param]).size(); i++)
-//             {
-//               nsimul.target_vars[i] = (kwargs[param][i]).asString();
-
-//               if (verbose > 2)
-//                 std::cout << "MosaikSim::set_next Param[" << i << "]: " << nsimul.target_vars[i] << std::endl;
-//             }
-//         }
-
-//     }
-
-//   //--- insert new entry into mosaikNSimul
-//   mosaikNSimul[node] = nsimul;
-
-//   if (verbose > 1)
-//     {
-//       std::cout << "MosaikSim::set_next node = " << node
-//                 << " Total entries: " << mosaikNSimul.size() << std::endl;
-//     }
-
-//   return "null";
-// }
-
-
 std::string
 MosaikSim::sendRequest(std::string content)
 {
@@ -1259,6 +1069,7 @@ MosaikSim::stop(void)
   objNetsim->~NS3Netsim();
   std::cout << "NS-3 Loop execution time total: " << std::setw(9) << total_exec_time << std::endl;
   std::cout << "NS-3 total step count: " << step_count << std::endl;
+  std::cout << "NS-3 total event count: " << objNetsim->eventCount << std::endl;
 
   return "null";
 }

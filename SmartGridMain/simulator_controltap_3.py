@@ -209,6 +209,7 @@ class ControlSim(mosaik_api.Simulator):
             
         print("simulator_controller::finalize:total execution time = ", self.total_exec_time)
         print("simulator_controller::finalize:total steps = ", self.step_count)
+        print("simulator_controller::finalize:total events = ", self.event_count)
         sys.stdout.flush()
 
     
