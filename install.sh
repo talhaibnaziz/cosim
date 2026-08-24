@@ -51,7 +51,7 @@ echo "Building NS3Mosaik"
 cd ../../NS3Mosaik
 make
 
-echo "Creating virtual env"
+echo "Creating 2 virtual envs for Mosaik 2 and Mosaik 3"
 cd ../
 mkdir virtualenv
 python3.8 -m venv virtualenv/cosimul
@@ -59,7 +59,18 @@ source virtualenv/cosimul/bin/activate
 pip install "setuptools<81"
 pip install "numpy<1.24"
 pip install "mosaik<3.1"
-# pip install "mosaik<3"
+pip install tables
+pip install scipy
+pip install matplotlib
+pip install pandas
+pip install setuptools
+pip install ./opendssdirect3.7
+
+python3.8 -m venv virtualenv/cosimul_2
+source virtualenv/cosimul_2/bin/activate
+pip install "setuptools<81"
+pip install "numpy<1.24"
+pip install "mosaik<3"
 pip install tables
 pip install scipy
 pip install matplotlib

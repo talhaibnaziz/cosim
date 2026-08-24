@@ -26,10 +26,10 @@ Mosaik_2 = False
 #--- Scenario selection:
 #--- 1. Tap Control with IEEE13
 #--- 2. State Estimation with IEEE33 and secondary test feeders
-Scenario = 2
+Scenario = 1
 
 # Scalable simulator count
-Scaler = 3
+Scaler = 0
 
 #--- Base Directory
 BASE_DIR = os.getcwd()

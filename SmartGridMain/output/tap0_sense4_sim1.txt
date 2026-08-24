@@ -1,0 +1,472 @@
+talha@talha-MS-7D46:~/workspace/CPSCosim/codes/SmartGridMain$ ./run_10_times.sh
+Starting simulation with args: {'json_file': '/home/talha/workspace/CPSCosim/codes/SmartGridMa
+in/IEEE13/gen_nodes.json', 'devs_file': 'IEEE13/IEEE13_Devices.csv', 'random_seed': 1, 'influx
+db': False}
+Starting "PFlowSim" as "PFlowSim-0" ...
+Starting "ControlSim" as "ControlSim-0" ...
+Starting "PktNetSim" as "PktNetSim-0" ...
+NS3_SimulationModel:main argv[1]: 127.0.0.1:5555
+Starting MosaikSim class with varargin: 127.0.0.1:5555
+MosaikSim::openSocket
+NS3Netsim::init Network Mode: tcp
+NS3Netsim::init Network Architecture: P2P
+Starting "Collector" as "Collector-0" ...
+Connect Sensor_611-632.0.0 to Transp_611-632.0.0
+Connect Sensor_675-632.0.0 to Transp_675-632.0.0
+Connect Sensor_680-632.0.0 to Transp_680-632.0.0
+Connect Sensor_670-632.0.0 to Transp_670-632.0.0
+Connect Control_632-650.0 to Transp_632-650.0
+Connect Transp_632-650.0 to Actuator_650.0
+Connect Transp_611-632.0.0 to Control_632-650.0
+Connect Transp_675-632.0.0 to Control_632-650.0
+Connect Transp_680-632.0.0 to Control_632-650.0
+Connect Transp_670-632.0.0 to Control_632-650.0
+Connect Sensor_611-632.0.0 to Collector-0
+Connect Sensor_675-632.0.0 to Collector-0
+Connect Sensor_680-632.0.0 to Collector-0
+Connect Sensor_670-632.0.0 to Collector-0
+Connect Control_632-650.0 to Collector-0
+Connect Actuator_650.0 to Collector-0
+Connect Prober_611.0.2 to Collector-0
+Connect Prober_650.1.2 to Collector-0
+Connect Prober_611.2.0 to Collector-0
+Connect Prober_650.3.2 to Collector-0
+Starting simulation.
+Simulation finished successfully.
+simulator_pflow::finalize:total execution time =  0.7615689999999872
+simulator_pflow::finalize:total steps =  899
+simulator_pflow::finalize:total events =  7491
+simulator_controller::finalize:total execution time =  0.022576000000000138
+simulator_controller::finalize:total steps =  2641
+simulator_controller::finalize:total events =  2400
+NS-3 Loop execution time total:  0.874738
+NS-3 communication time:  0.422361
+NS-3 total step count: 6221
+NS-3 total event count: 36306
+Collector::finalize:total execution time =  0.035872000000000195
+Collector::finalize:total steps =  899
+simulation took 2.5920836539999073 seconds
+Starting simulation with args: {'json_file': '/home/talha/workspace/CPSCosim/codes/SmartGridMa
+in/IEEE13/gen_nodes.json', 'devs_file': 'IEEE13/IEEE13_Devices.csv', 'random_seed': 1, 'influx
+db': False}
+Starting "PFlowSim" as "PFlowSim-0" ...
+Starting "ControlSim" as "ControlSim-0" ...
+Starting "PktNetSim" as "PktNetSim-0" ...
+NS3_SimulationModel:main argv[1]: 127.0.0.1:5555
+Starting MosaikSim class with varargin: 127.0.0.1:5555
+MosaikSim::openSocket
+NS3Netsim::init Network Mode: tcp
+NS3Netsim::init Network Architecture: P2P
+Starting "Collector" as "Collector-0" ...
+Connect Sensor_611-632.0.0 to Transp_611-632.0.0
+Connect Sensor_675-632.0.0 to Transp_675-632.0.0
+Connect Sensor_680-632.0.0 to Transp_680-632.0.0
+Connect Sensor_670-632.0.0 to Transp_670-632.0.0
+Connect Control_632-650.0 to Transp_632-650.0
+Connect Transp_632-650.0 to Actuator_650.0
+Connect Transp_611-632.0.0 to Control_632-650.0
+Connect Transp_675-632.0.0 to Control_632-650.0
+Connect Transp_680-632.0.0 to Control_632-650.0
+Connect Transp_670-632.0.0 to Control_632-650.0
+Connect Sensor_611-632.0.0 to Collector-0
+Connect Sensor_675-632.0.0 to Collector-0
+Connect Sensor_680-632.0.0 to Collector-0
+Connect Sensor_670-632.0.0 to Collector-0
+Connect Control_632-650.0 to Collector-0
+Connect Actuator_650.0 to Collector-0
+Connect Prober_611.0.2 to Collector-0
+Connect Prober_650.1.2 to Collector-0
+Connect Prober_611.2.0 to Collector-0
+Connect Prober_650.3.2 to Collector-0
+Starting simulation.
+Simulation finished successfully.
+simulator_pflow::finalize:total execution time =  0.7610469999999956
+simulator_pflow::finalize:total steps =  899
+simulator_pflow::finalize:total events =  7491
+simulator_controller::finalize:total execution time =  0.020238000000000134
+simulator_controller::finalize:total steps =  2641
+simulator_controller::finalize:total events =  2400
+NS-3 Loop execution time total:  0.866487
+NS-3 communication time:   0.40644
+NS-3 total step count: 6221
+NS-3 total event count: 36306
+Collector::finalize:total execution time =  0.034921000000000126
+Collector::finalize:total steps =  899
+simulation took 2.5444847530002335 seconds
+Starting simulation with args: {'json_file': '/home/talha/workspace/CPSCosim/codes/SmartGridMa
+in/IEEE13/gen_nodes.json', 'devs_file': 'IEEE13/IEEE13_Devices.csv', 'random_seed': 1, 'influx
+db': False}
+Starting "PFlowSim" as "PFlowSim-0" ...
+Starting "ControlSim" as "ControlSim-0" ...
+Starting "PktNetSim" as "PktNetSim-0" ...
+NS3_SimulationModel:main argv[1]: 127.0.0.1:5555
+Starting MosaikSim class with varargin: 127.0.0.1:5555
+MosaikSim::openSocket
+NS3Netsim::init Network Mode: tcp
+NS3Netsim::init Network Architecture: P2P
+Starting "Collector" as "Collector-0" ...
+Connect Sensor_611-632.0.0 to Transp_611-632.0.0
+Connect Sensor_675-632.0.0 to Transp_675-632.0.0
+Connect Sensor_680-632.0.0 to Transp_680-632.0.0
+Connect Sensor_670-632.0.0 to Transp_670-632.0.0
+Connect Control_632-650.0 to Transp_632-650.0
+Connect Transp_632-650.0 to Actuator_650.0
+Connect Transp_611-632.0.0 to Control_632-650.0
+Connect Transp_675-632.0.0 to Control_632-650.0
+Connect Transp_680-632.0.0 to Control_632-650.0
+Connect Transp_670-632.0.0 to Control_632-650.0
+Connect Sensor_611-632.0.0 to Collector-0
+Connect Sensor_675-632.0.0 to Collector-0
+Connect Sensor_680-632.0.0 to Collector-0
+Connect Sensor_670-632.0.0 to Collector-0
+Connect Control_632-650.0 to Collector-0
+Connect Actuator_650.0 to Collector-0
+Connect Prober_611.0.2 to Collector-0
+Connect Prober_650.1.2 to Collector-0
+Connect Prober_611.2.0 to Collector-0
+Connect Prober_650.3.2 to Collector-0
+Starting simulation.
+Simulation finished successfully.
+simulator_pflow::finalize:total execution time =  0.760810999999989
+simulator_pflow::finalize:total steps =  899
+simulator_pflow::finalize:total events =  7491
+simulator_controller::finalize:total execution time =  0.02091700000000013
+simulator_controller::finalize:total steps =  2641
+simulator_controller::finalize:total events =  2400
+NS-3 Loop execution time total:  0.858011
+NS-3 communication time:  0.408442
+NS-3 total step count: 6221
+NS-3 total event count: 36306
+Collector::finalize:total execution time =  0.03525500000000019
+Collector::finalize:total steps =  899
+simulation took 2.5462757469999815 seconds
+Starting simulation with args: {'json_file': '/home/talha/workspace/CPSCosim/codes/SmartGridMa
+in/IEEE13/gen_nodes.json', 'devs_file': 'IEEE13/IEEE13_Devices.csv', 'random_seed': 1, 'influx
+db': False}
+Starting "PFlowSim" as "PFlowSim-0" ...
+Starting "ControlSim" as "ControlSim-0" ...
+Starting "PktNetSim" as "PktNetSim-0" ...
+NS3_SimulationModel:main argv[1]: 127.0.0.1:5555
+Starting MosaikSim class with varargin: 127.0.0.1:5555
+MosaikSim::openSocket
+NS3Netsim::init Network Mode: tcp
+NS3Netsim::init Network Architecture: P2P
+Starting "Collector" as "Collector-0" ...
+Connect Sensor_611-632.0.0 to Transp_611-632.0.0
+Connect Sensor_675-632.0.0 to Transp_675-632.0.0
+Connect Sensor_680-632.0.0 to Transp_680-632.0.0
+Connect Sensor_670-632.0.0 to Transp_670-632.0.0
+Connect Control_632-650.0 to Transp_632-650.0
+Connect Transp_632-650.0 to Actuator_650.0
+Connect Transp_611-632.0.0 to Control_632-650.0
+Connect Transp_675-632.0.0 to Control_632-650.0
+Connect Transp_680-632.0.0 to Control_632-650.0
+Connect Transp_670-632.0.0 to Control_632-650.0
+Connect Sensor_611-632.0.0 to Collector-0
+Connect Sensor_675-632.0.0 to Collector-0
+Connect Sensor_680-632.0.0 to Collector-0
+Connect Sensor_670-632.0.0 to Collector-0
+Connect Control_632-650.0 to Collector-0
+Connect Actuator_650.0 to Collector-0
+Connect Prober_611.0.2 to Collector-0
+Connect Prober_650.1.2 to Collector-0
+Connect Prober_611.2.0 to Collector-0
+Connect Prober_650.3.2 to Collector-0
+Starting simulation.
+Simulation finished successfully.
+simulator_pflow::finalize:total execution time =  0.7603049999999887
+simulator_pflow::finalize:total steps =  899
+simulator_pflow::finalize:total events =  7491
+simulator_controller::finalize:total execution time =  0.0207120000000001
+simulator_controller::finalize:total steps =  2641
+simulator_controller::finalize:total events =  2400
+NS-3 Loop execution time total:  0.869547
+NS-3 communication time:  0.411944
+NS-3 total step count: 6221
+NS-3 total event count: 36306
+Collector::finalize:total execution time =  0.035371000000000284
+Collector::finalize:total steps =  899
+simulation took 2.552241261999825 seconds
+Starting simulation with args: {'json_file': '/home/talha/workspace/CPSCosim/codes/SmartGridMa
+in/IEEE13/gen_nodes.json', 'devs_file': 'IEEE13/IEEE13_Devices.csv', 'random_seed': 1, 'influx
+db': False}
+Starting "PFlowSim" as "PFlowSim-0" ...
+Starting "ControlSim" as "ControlSim-0" ...
+Starting "PktNetSim" as "PktNetSim-0" ...
+NS3_SimulationModel:main argv[1]: 127.0.0.1:5555
+Starting MosaikSim class with varargin: 127.0.0.1:5555
+MosaikSim::openSocket
+NS3Netsim::init Network Mode: tcp
+NS3Netsim::init Network Architecture: P2P
+Starting "Collector" as "Collector-0" ...
+Connect Sensor_611-632.0.0 to Transp_611-632.0.0
+Connect Sensor_675-632.0.0 to Transp_675-632.0.0
+Connect Sensor_680-632.0.0 to Transp_680-632.0.0
+Connect Sensor_670-632.0.0 to Transp_670-632.0.0
+Connect Control_632-650.0 to Transp_632-650.0
+Connect Transp_632-650.0 to Actuator_650.0
+Connect Transp_611-632.0.0 to Control_632-650.0
+Connect Transp_675-632.0.0 to Control_632-650.0
+Connect Transp_680-632.0.0 to Control_632-650.0
+Connect Transp_670-632.0.0 to Control_632-650.0
+Connect Sensor_611-632.0.0 to Collector-0
+Connect Sensor_675-632.0.0 to Collector-0
+Connect Sensor_680-632.0.0 to Collector-0
+Connect Sensor_670-632.0.0 to Collector-0
+Connect Control_632-650.0 to Collector-0
+Connect Actuator_650.0 to Collector-0
+Connect Prober_611.0.2 to Collector-0
+Connect Prober_650.1.2 to Collector-0
+Connect Prober_611.2.0 to Collector-0
+Connect Prober_650.3.2 to Collector-0
+Starting simulation.
+Simulation finished successfully.
+simulator_pflow::finalize:total execution time =  0.7583339999999913
+simulator_pflow::finalize:total steps =  899
+simulator_pflow::finalize:total events =  7491
+simulator_controller::finalize:total execution time =  0.020720000000000082
+simulator_controller::finalize:total steps =  2641
+simulator_controller::finalize:total events =  2400
+NS-3 Loop execution time total:  0.863784
+NS-3 communication time:  0.409589
+NS-3 total step count: 6221
+NS-3 total event count: 36306
+Collector::finalize:total execution time =  0.034933000000000124
+Collector::finalize:total steps =  899
+simulation took 2.551408012000138 seconds
+Starting simulation with args: {'json_file': '/home/talha/workspace/CPSCosim/codes/SmartGridMa
+in/IEEE13/gen_nodes.json', 'devs_file': 'IEEE13/IEEE13_Devices.csv', 'random_seed': 1, 'influx
+db': False}
+Starting "PFlowSim" as "PFlowSim-0" ...
+Starting "ControlSim" as "ControlSim-0" ...
+Starting "PktNetSim" as "PktNetSim-0" ...
+NS3_SimulationModel:main argv[1]: 127.0.0.1:5555
+Starting MosaikSim class with varargin: 127.0.0.1:5555
+MosaikSim::openSocket
+NS3Netsim::init Network Mode: tcp
+NS3Netsim::init Network Architecture: P2P
+Starting "Collector" as "Collector-0" ...
+Connect Sensor_611-632.0.0 to Transp_611-632.0.0
+Connect Sensor_675-632.0.0 to Transp_675-632.0.0
+Connect Sensor_680-632.0.0 to Transp_680-632.0.0
+Connect Sensor_670-632.0.0 to Transp_670-632.0.0
+Connect Control_632-650.0 to Transp_632-650.0
+Connect Transp_632-650.0 to Actuator_650.0
+Connect Transp_611-632.0.0 to Control_632-650.0
+Connect Transp_675-632.0.0 to Control_632-650.0
+Connect Transp_680-632.0.0 to Control_632-650.0
+Connect Transp_670-632.0.0 to Control_632-650.0
+Connect Sensor_611-632.0.0 to Collector-0
+Connect Sensor_675-632.0.0 to Collector-0
+Connect Sensor_680-632.0.0 to Collector-0
+Connect Sensor_670-632.0.0 to Collector-0
+Connect Control_632-650.0 to Collector-0
+Connect Actuator_650.0 to Collector-0
+Connect Prober_611.0.2 to Collector-0
+Connect Prober_650.1.2 to Collector-0
+Connect Prober_611.2.0 to Collector-0
+Connect Prober_650.3.2 to Collector-0
+Starting simulation.
+Simulation finished successfully.
+simulator_pflow::finalize:total execution time =  0.7573219999999893
+simulator_pflow::finalize:total steps =  899
+simulator_pflow::finalize:total events =  7491
+simulator_controller::finalize:total execution time =  0.020715000000000122
+simulator_controller::finalize:total steps =  2641
+simulator_controller::finalize:total events =  2400
+NS-3 Loop execution time total:  0.873694
+NS-3 communication time:  0.413624
+NS-3 total step count: 6221
+NS-3 total event count: 36306
+Collector::finalize:total execution time =  0.03533500000000024
+Collector::finalize:total steps =  899
+simulation took 2.5549473070000204 seconds
+Starting simulation with args: {'json_file': '/home/talha/workspace/CPSCosim/codes/SmartGridMa
+in/IEEE13/gen_nodes.json', 'devs_file': 'IEEE13/IEEE13_Devices.csv', 'random_seed': 1, 'influx
+db': False}
+Starting "PFlowSim" as "PFlowSim-0" ...
+Starting "ControlSim" as "ControlSim-0" ...
+Starting "PktNetSim" as "PktNetSim-0" ...
+NS3_SimulationModel:main argv[1]: 127.0.0.1:5555
+Starting MosaikSim class with varargin: 127.0.0.1:5555
+MosaikSim::openSocket
+NS3Netsim::init Network Mode: tcp
+NS3Netsim::init Network Architecture: P2P
+Starting "Collector" as "Collector-0" ...
+Connect Sensor_611-632.0.0 to Transp_611-632.0.0
+Connect Sensor_675-632.0.0 to Transp_675-632.0.0
+Connect Sensor_680-632.0.0 to Transp_680-632.0.0
+Connect Sensor_670-632.0.0 to Transp_670-632.0.0
+Connect Control_632-650.0 to Transp_632-650.0
+Connect Transp_632-650.0 to Actuator_650.0
+Connect Transp_611-632.0.0 to Control_632-650.0
+Connect Transp_675-632.0.0 to Control_632-650.0
+Connect Transp_680-632.0.0 to Control_632-650.0
+Connect Transp_670-632.0.0 to Control_632-650.0
+Connect Sensor_611-632.0.0 to Collector-0
+Connect Sensor_675-632.0.0 to Collector-0
+Connect Sensor_680-632.0.0 to Collector-0
+Connect Sensor_670-632.0.0 to Collector-0
+Connect Control_632-650.0 to Collector-0
+Connect Actuator_650.0 to Collector-0
+Connect Prober_611.0.2 to Collector-0
+Connect Prober_650.1.2 to Collector-0
+Connect Prober_611.2.0 to Collector-0
+Connect Prober_650.3.2 to Collector-0
+Starting simulation.
+Simulation finished successfully.
+simulator_pflow::finalize:total execution time =  0.7564759999999942
+simulator_pflow::finalize:total steps =  899
+simulator_pflow::finalize:total events =  7491
+simulator_controller::finalize:total execution time =  0.02166800000000015
+simulator_controller::finalize:total steps =  2641
+simulator_controller::finalize:total events =  2400
+NS-3 Loop execution time total:  0.849732
+NS-3 communication time:  0.407445
+NS-3 total step count: 6221
+NS-3 total event count: 36306
+Collector::finalize:total execution time =  0.03500100000000021
+Collector::finalize:total steps =  899
+simulation took 2.5420215620001727 seconds
+Starting simulation with args: {'json_file': '/home/talha/workspace/CPSCosim/codes/SmartGridMa
+in/IEEE13/gen_nodes.json', 'devs_file': 'IEEE13/IEEE13_Devices.csv', 'random_seed': 1, 'influx
+db': False}
+Starting "PFlowSim" as "PFlowSim-0" ...
+Starting "ControlSim" as "ControlSim-0" ...
+Starting "PktNetSim" as "PktNetSim-0" ...
+NS3_SimulationModel:main argv[1]: 127.0.0.1:5555
+Starting MosaikSim class with varargin: 127.0.0.1:5555
+MosaikSim::openSocket
+NS3Netsim::init Network Mode: tcp
+NS3Netsim::init Network Architecture: P2P
+Starting "Collector" as "Collector-0" ...
+Connect Sensor_611-632.0.0 to Transp_611-632.0.0
+Connect Sensor_675-632.0.0 to Transp_675-632.0.0
+Connect Sensor_680-632.0.0 to Transp_680-632.0.0
+Connect Sensor_670-632.0.0 to Transp_670-632.0.0
+Connect Control_632-650.0 to Transp_632-650.0
+Connect Transp_632-650.0 to Actuator_650.0
+Connect Transp_611-632.0.0 to Control_632-650.0
+Connect Transp_675-632.0.0 to Control_632-650.0
+Connect Transp_680-632.0.0 to Control_632-650.0
+Connect Transp_670-632.0.0 to Control_632-650.0
+Connect Sensor_611-632.0.0 to Collector-0
+Connect Sensor_675-632.0.0 to Collector-0
+Connect Sensor_680-632.0.0 to Collector-0
+Connect Sensor_670-632.0.0 to Collector-0
+Connect Control_632-650.0 to Collector-0
+Connect Actuator_650.0 to Collector-0
+Connect Prober_611.0.2 to Collector-0
+Connect Prober_650.1.2 to Collector-0
+Connect Prober_611.2.0 to Collector-0
+Connect Prober_650.3.2 to Collector-0
+Starting simulation.
+Simulation finished successfully.
+simulator_pflow::finalize:total execution time =  0.7612889999999877
+simulator_pflow::finalize:total steps =  899
+simulator_pflow::finalize:total events =  7491
+simulator_controller::finalize:total execution time =  0.021038000000000064
+simulator_controller::finalize:total steps =  2641
+simulator_controller::finalize:total events =  2400
+NS-3 Loop execution time total:  0.856111
+NS-3 communication time:  0.405287
+NS-3 total step count: 6221
+NS-3 total event count: 36306
+Collector::finalize:total execution time =  0.03508100000000021
+Collector::finalize:total steps =  899
+simulation took 2.5453501400002096 seconds
+Starting simulation with args: {'json_file': '/home/talha/workspace/CPSCosim/codes/SmartGridMa
+in/IEEE13/gen_nodes.json', 'devs_file': 'IEEE13/IEEE13_Devices.csv', 'random_seed': 1, 'influx
+db': False}
+Starting "PFlowSim" as "PFlowSim-0" ...
+Starting "ControlSim" as "ControlSim-0" ...
+Starting "PktNetSim" as "PktNetSim-0" ...
+NS3_SimulationModel:main argv[1]: 127.0.0.1:5555
+Starting MosaikSim class with varargin: 127.0.0.1:5555
+MosaikSim::openSocket
+NS3Netsim::init Network Mode: tcp
+NS3Netsim::init Network Architecture: P2P
+Starting "Collector" as "Collector-0" ...
+Connect Sensor_611-632.0.0 to Transp_611-632.0.0
+Connect Sensor_675-632.0.0 to Transp_675-632.0.0
+Connect Sensor_680-632.0.0 to Transp_680-632.0.0
+Connect Sensor_670-632.0.0 to Transp_670-632.0.0
+Connect Control_632-650.0 to Transp_632-650.0
+Connect Transp_632-650.0 to Actuator_650.0
+Connect Transp_611-632.0.0 to Control_632-650.0
+Connect Transp_675-632.0.0 to Control_632-650.0
+Connect Transp_680-632.0.0 to Control_632-650.0
+Connect Transp_670-632.0.0 to Control_632-650.0
+Connect Sensor_611-632.0.0 to Collector-0
+Connect Sensor_675-632.0.0 to Collector-0
+Connect Sensor_680-632.0.0 to Collector-0
+Connect Sensor_670-632.0.0 to Collector-0
+Connect Control_632-650.0 to Collector-0
+Connect Actuator_650.0 to Collector-0
+Connect Prober_611.0.2 to Collector-0
+Connect Prober_650.1.2 to Collector-0
+Connect Prober_611.2.0 to Collector-0
+Connect Prober_650.3.2 to Collector-0
+Starting simulation.
+Simulation finished successfully.
+simulator_pflow::finalize:total execution time =  0.7564229999999902
+simulator_pflow::finalize:total steps =  899
+simulator_pflow::finalize:total events =  7491
+simulator_controller::finalize:total execution time =  0.02008500000000011
+simulator_controller::finalize:total steps =  2641
+simulator_controller::finalize:total events =  2400
+NS-3 Loop execution time total:  0.852592
+NS-3 communication time:  0.408216
+NS-3 total step count: 6221
+NS-3 total event count: 36306
+Collector::finalize:total execution time =  0.03530700000000027
+Collector::finalize:total steps =  899
+simulation took 2.536597748999611 seconds
+Starting simulation with args: {'json_file': '/home/talha/workspace/CPSCosim/codes/SmartGridMa
+in/IEEE13/gen_nodes.json', 'devs_file': 'IEEE13/IEEE13_Devices.csv', 'random_seed': 1, 'influx
+db': False}
+Starting "PFlowSim" as "PFlowSim-0" ...
+Starting "ControlSim" as "ControlSim-0" ...
+Starting "PktNetSim" as "PktNetSim-0" ...
+NS3_SimulationModel:main argv[1]: 127.0.0.1:5555
+Starting MosaikSim class with varargin: 127.0.0.1:5555
+MosaikSim::openSocket
+NS3Netsim::init Network Mode: tcp
+NS3Netsim::init Network Architecture: P2P
+Starting "Collector" as "Collector-0" ...
+Connect Sensor_611-632.0.0 to Transp_611-632.0.0
+Connect Sensor_675-632.0.0 to Transp_675-632.0.0
+Connect Sensor_680-632.0.0 to Transp_680-632.0.0
+Connect Sensor_670-632.0.0 to Transp_670-632.0.0
+Connect Control_632-650.0 to Transp_632-650.0
+Connect Transp_632-650.0 to Actuator_650.0
+Connect Transp_611-632.0.0 to Control_632-650.0
+Connect Transp_675-632.0.0 to Control_632-650.0
+Connect Transp_680-632.0.0 to Control_632-650.0
+Connect Transp_670-632.0.0 to Control_632-650.0
+Connect Sensor_611-632.0.0 to Collector-0
+Connect Sensor_675-632.0.0 to Collector-0
+Connect Sensor_680-632.0.0 to Collector-0
+Connect Sensor_670-632.0.0 to Collector-0
+Connect Control_632-650.0 to Collector-0
+Connect Actuator_650.0 to Collector-0
+Connect Prober_611.0.2 to Collector-0
+Connect Prober_650.1.2 to Collector-0
+Connect Prober_611.2.0 to Collector-0
+Connect Prober_650.3.2 to Collector-0
+Starting simulation.
+Simulation finished successfully.
+simulator_pflow::finalize:total execution time =  0.7552179999999888
+simulator_pflow::finalize:total steps =  899
+simulator_pflow::finalize:total events =  7491
+simulator_controller::finalize:total execution time =  0.02103800000000009
+simulator_controller::finalize:total steps =  2641
+simulator_controller::finalize:total events =  2400
+NS-3 Loop execution time total:  0.865434
+NS-3 communication time:  0.410306
+NS-3 total step count: 6221
+NS-3 total event count: 36306
+Collector::finalize:total execution time =  0.0349440000000002
+Collector::finalize:total steps =  899
+simulation took 2.543302605000008 seconds
+talha@talha-MS-7D46:~/workspace/CPSCosim/codes/SmartGridMain$

@@ -47,6 +47,7 @@ class ControlSim(mosaik_api.Simulator):
         self.instances = {}
         self.time = 0
         self.eventQueue = queue.PriorityQueue()
+        self.event_count = 0
         
     def init(self, sid, time_resolution, verbose=0):
         self.sid = sid
@@ -138,6 +139,7 @@ class ControlSim(mosaik_api.Simulator):
                     
                     #--- time
                     self.data[controller_eid]['t'].append(time)
+                    self.event_count = self.event_count + 1
 
 
         #--- schedule control events to calculate LBTS
