@@ -210,7 +210,8 @@ class MosaikSim {
   std::map<std::string, std::string> netsimParams; ///< Network simulator parameters
   std::map<std::string, std::pair<std::string, std::string>> netsimEntities;         ///< Network simulator entities
   std::vector<NetSimConn> vecNetSimConn;           ///< Network simulator connections
-  double total_exec_time;   ///< total execution time of Mosaik calls
+  double step_time;         ///< execution time of Mosaik calls
+  double comm_time;         ///< de/serialization and communication time
   int step_count;           ///< total number of times "step" is called
   //---
   //--- Transporter model variables

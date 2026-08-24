@@ -168,37 +168,43 @@ void MosaikSim::mainLoop(void)
   std::string messages;
   Json::Value jsonMessage;
 
-  total_exec_time = 0.0;
+  step_time = 0.0;
+  comm_time = 0.0;
 
   while (!stopServer)
   {
     try
     {
-      auto start = std::chrono::system_clock::now();
 
       //--- reset the mainLoop operation result
       mosaikLastMsgOp = SUCCESS;
 
       //--- Read Messages form the Socket
-      messages = readSocket();
+      messages = readSocket(); // skipping this time as there is a lot of waiting here for the response from mosaik
 
+      auto start = std::chrono::system_clock::now();
       //--- Deserialize the messages and get message Id
       jsonMessage = deserialize(messages, currentMsgId);
 
+      auto end = std::chrono::system_clock::now();
+      comm_time += (end-start).count();
+
+      start = std::chrono::system_clock::now();
       //--- Select command received, forward to appropriate method, and
       //--- get the result of the command execution
       result = simSocketReceivedRequest(jsonMessage);
+      end = std::chrono::system_clock::now();
+      step_time += (end-start).count();
 
+      start = std::chrono::system_clock::now();
       //--- Serialize and write the response
       result = serialize(result, mosaikLastMsgOp, currentMsgId);
       send(sock, result.c_str(), result.size(), 0);
 
       if (verbose > 1)
         std::cout << "MosaikSim::mainLoop ***** MSG SENT !! *****" << std::endl;
-        
-      auto end = std::chrono::system_clock::now();
-      std::chrono::duration<double> diff = end - start;
-      total_exec_time += diff.count();
+      end = std::chrono::system_clock::now();
+      comm_time += (end-start).count();
     }
     catch (std::exception &e)
     {
@@ -1067,7 +1073,8 @@ MosaikSim::stop(void)
   //--- NS3 stop and destroy model
   //---
   objNetsim->~NS3Netsim();
-  std::cout << "NS-3 Loop execution time total: " << std::setw(9) << total_exec_time << std::endl;
+  std::cout << "NS-3 Loop execution time total: " << std::setw(9) << (comm_time + step_time) / 1000000000 << std::endl;
+  std::cout << "NS-3 communication time: " << std::setw(9) << step_time / 1000000000 << std::endl;
   std::cout << "NS-3 total step count: " << step_count << std::endl;
   std::cout << "NS-3 total event count: " << objNetsim->eventCount << std::endl;
 
