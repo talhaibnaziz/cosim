@@ -254,7 +254,7 @@ def  create_scenario( world, args ):
             devs_file       = DEVS_RPATH_FILE,
             linkRate        = "512Kbps",
             linkDelay       = "15ms",
-            linkErrorRate   = "0.0001",
+            linkErrorRate   = "0.1",
             start_time      = 0,
             stop_time       = END_TIME,
             random_seed     = args.random_seed,
@@ -733,9 +733,9 @@ def  create_scenario( world, args ):
             eid = "Transp_" + test_clients[simIdx] + "_" + test_clients[total_clients - simIdx]
         )
         world.connect(sender, transporter, 'v', 't')
-        print('Connect', sender.eid, 'to', transporter.eid)
+        # print('Connect', sender.eid, 'to', transporter.eid)
         world.connect(transporter, receiver, 'v', 't')
-        print('Connect', transporter.eid, 'to', receiver.eid)
+        # print('Connect', transporter.eid, 'to', receiver.eid)
 
         
 
