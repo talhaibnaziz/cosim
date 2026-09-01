@@ -1,0 +1,296 @@
+Starting simulation with args: {'json_file': '/home/talha/workspace/CPSCosim/codes/SmartGridMain/IEEE13/gen_nodes.json', 'devs_file': 'IEEE13/IEEE13_Devices.csv', 'random_seed': 1, 'influxdb': False}
+Starting "PFlowSim" as "PFlowSim-0" ...
+NS3_SimulationModel:main argv[1]: 127.0.0.1:5555
+Starting MosaikSim class with varargin: 127.0.0.1:5555
+MosaikSim::openSocket
+NS3Netsim::init Network Mode: tcp
+NS3Netsim::init Network Architecture: P2P
+Starting "ControlSim" as "ControlSim-0" ...
+Starting "PktNetSim" as "PktNetSim-0" ...
+Starting "Collector" as "Collector-0" ...
+simulator_controller::create 1 RangeControl :  Control_632-650.0
+Connect Sensor_611-632.0.0 to Transp_611-632.0.0
+Connect Sensor_675-632.0.0 to Transp_675-632.0.0
+Connect Sensor_680-632.0.0 to Transp_680-632.0.0
+Connect Sensor_670-632.0.0 to Transp_670-632.0.0
+Connect Control_632-650.0 to Transp_632-650.0
+Connect Transp_632-650.0 to Actuator_650.0
+Connect Transp_611-632.0.0 to Control_632-650.0
+Connect Transp_675-632.0.0 to Control_632-650.0
+Connect Transp_680-632.0.0 to Control_632-650.0
+Connect Transp_670-632.0.0 to Control_632-650.0
+Connect Sensor_611-632.0.0 to Collector-0
+Connect Sensor_675-632.0.0 to Collector-0
+Connect Sensor_680-632.0.0 to Collector-0
+Connect Sensor_670-632.0.0 to Collector-0
+Connect Control_632-650.0 to Collector-0
+Connect Actuator_650.0 to Collector-0
+Connect Prober_611.0.2 to Collector-0
+Connect Prober_650.1.2 to Collector-0
+Connect Prober_611.2.0 to Collector-0
+Connect Prober_650.3.2 to Collector-0
+Starting simulation.
+Progress: 0.00%Progress: 0.00%simulator_controller::step:  0  Max Advance:  14
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  200
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 0.04%Progress: 0.08%Progress: 0.33%Progress: 0.57%Progress: 0.82%Progress: 1.07%Progress: 1.54%Progress: 1.54%simulator_controller::step:  200  Max Advance:  299
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  400
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 2.25%Progress: 2.50%Progress: 2.75%Progress: 3.25%Progress: 3.50%Progress: 3.75%Progress: 3.75%simulator_controller::step:  400  Max Advance:  499
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  600
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 4.25%Progress: 4.50%Progress: 4.75%Progress: 5.25%Progress: 5.50%Progress: 5.75%Progress: 5.75%simulator_controller::step:  600  Max Advance:  699
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  800
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 6.25%Progress: 6.50%Progress: 6.75%Progress: 7.25%Progress: 7.50%Progress: 7.75%Progress: 7.75%simulator_controller::step:  800  Max Advance:  899
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  1000
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 8.25%Progress: 8.50%Progress: 8.75%Progress: 9.25%Progress: 9.50%Progress: 9.75%Progress: 9.75%simulator_controller::step:  1000  Max Advance:  1099
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  1200
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 10.25%Progress: 10.50%Progress: 10.75%Progress: 11.25%Progress: 11.50%Progress: 11.75%Progress: 11.75%simulator_controller::step:  1200  Max Advance:  1299
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  1400
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 12.25%Progress: 12.50%Progress: 12.75%Progress: 13.25%Progress: 13.50%Progress: 13.75%Progress: 13.75%simulator_controller::step:  1400  Max Advance:  1499
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  1600
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 14.25%Progress: 14.50%Progress: 14.75%Progress: 15.25%Progress: 15.50%Progress: 15.75%Progress: 15.75%simulator_controller::step:  1600  Max Advance:  1699
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  1800
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 16.25%Progress: 16.50%Progress: 16.75%Progress: 17.25%Progress: 17.50%Progress: 17.75%Progress: 17.75%simulator_controller::step:  1800  Max Advance:  1899
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  2000
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 18.25%Progress: 18.50%Progress: 18.75%Progress: 19.25%Progress: 19.50%Progress: 19.75%Progress: 19.75%simulator_controller::step:  2000  Max Advance:  2099
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  2200
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 20.25%Progress: 20.50%Progress: 20.75%Progress: 21.25%Progress: 21.50%Progress: 21.75%Progress: 21.75%simulator_controller::step:  2200  Max Advance:  2299
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  2400
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 22.25%Progress: 22.50%Progress: 22.75%Progress: 23.25%Progress: 23.50%Progress: 23.75%Progress: 23.75%simulator_controller::step:  2400  Max Advance:  2499
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  2600
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 24.25%Progress: 24.50%Progress: 24.75%Progress: 25.25%Progress: 25.50%Progress: 25.75%Progress: 25.75%simulator_controller::step:  2600  Max Advance:  2699
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  2800
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 26.25%Progress: 26.50%Progress: 26.75%Progress: 27.25%Progress: 27.50%Progress: 27.75%Progress: 27.75%simulator_controller::step:  2800  Max Advance:  2899
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  3000
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 28.25%Progress: 28.50%Progress: 28.75%Progress: 29.25%Progress: 29.50%Progress: 29.75%Progress: 29.75%simulator_controller::step:  3000  Max Advance:  3014
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  3200
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 30.04%Progress: 30.08%Progress: 30.32%Progress: 30.57%Progress: 30.82%Progress: 31.07%Progress: 31.54%Progress: 31.54%simulator_controller::step:  3200  Max Advance:  3299
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  3400
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 32.25%Progress: 32.50%Progress: 32.75%Progress: 33.25%Progress: 33.50%Progress: 33.75%Progress: 33.75%simulator_controller::step:  3400  Max Advance:  3499
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  3600
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 34.25%Progress: 34.50%Progress: 34.75%Progress: 35.25%Progress: 35.50%Progress: 35.75%Progress: 35.75%simulator_controller::step:  3600  Max Advance:  3699
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  3800
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 36.25%Progress: 36.50%Progress: 36.75%Progress: 37.25%Progress: 37.50%Progress: 37.75%Progress: 37.75%simulator_controller::step:  3800  Max Advance:  3899
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  4000
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 38.25%Progress: 38.50%Progress: 38.75%Progress: 39.25%Progress: 39.50%Progress: 39.75%Progress: 39.75%simulator_controller::step:  4000  Max Advance:  4099
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  4200
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 40.25%Progress: 40.50%Progress: 40.75%Progress: 41.25%Progress: 41.50%Progress: 41.75%Progress: 41.75%simulator_controller::step:  4200  Max Advance:  4299
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  4400
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 42.25%Progress: 42.50%Progress: 42.75%Progress: 43.25%Progress: 43.50%Progress: 43.75%Progress: 43.75%simulator_controller::step:  4400  Max Advance:  4499
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  4600
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 44.25%Progress: 44.50%Progress: 44.75%Progress: 45.25%Progress: 45.50%Progress: 45.75%Progress: 45.75%simulator_controller::step:  4600  Max Advance:  4699
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  4800
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 46.25%Progress: 46.50%Progress: 46.75%Progress: 47.25%Progress: 47.50%Progress: 47.75%Progress: 47.75%simulator_controller::step:  4800  Max Advance:  4899
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  5000
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 48.25%Progress: 48.50%Progress: 48.75%Progress: 49.25%Progress: 49.50%Progress: 49.75%Progress: 49.75%simulator_controller::step:  5000  Max Advance:  5099
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  5200
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 50.25%Progress: 50.50%Progress: 50.75%Progress: 51.25%Progress: 51.50%Progress: 51.75%Progress: 51.75%simulator_controller::step:  5200  Max Advance:  5299
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  5400
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 52.25%Progress: 52.50%Progress: 52.75%Progress: 53.25%Progress: 53.50%Progress: 53.75%Progress: 53.75%simulator_controller::step:  5400  Max Advance:  5499
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  5600
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 54.25%Progress: 54.50%Progress: 54.75%Progress: 55.25%Progress: 55.50%Progress: 55.75%Progress: 55.75%simulator_controller::step:  5600  Max Advance:  5699
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  5800
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 56.25%Progress: 56.50%Progress: 56.75%Progress: 57.25%Progress: 57.50%Progress: 57.75%Progress: 57.75%simulator_controller::step:  5800  Max Advance:  5899
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  6000
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 58.25%Progress: 58.50%Progress: 58.75%Progress: 59.25%Progress: 59.50%Progress: 59.75%Progress: 59.75%simulator_controller::step:  6000  Max Advance:  6099
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  6200
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 60.25%Progress: 60.50%Progress: 60.75%Progress: 61.25%Progress: 61.50%Progress: 61.75%Progress: 61.75%simulator_controller::step:  6200  Max Advance:  6299
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  6400
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 62.25%Progress: 62.50%Progress: 62.75%Progress: 63.25%Progress: 63.50%Progress: 63.75%Progress: 63.75%simulator_controller::step:  6400  Max Advance:  6499
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  6600
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 64.25%Progress: 64.50%Progress: 64.75%Progress: 65.25%Progress: 65.50%Progress: 65.75%Progress: 65.75%simulator_controller::step:  6600  Max Advance:  6699
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  6800
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 66.25%Progress: 66.50%Progress: 66.75%Progress: 67.25%Progress: 67.50%Progress: 67.75%Progress: 67.75%simulator_controller::step:  6800  Max Advance:  6899
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  7000
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 68.25%Progress: 68.50%Progress: 68.75%Progress: 69.25%Progress: 69.50%Progress: 69.75%Progress: 69.75%simulator_controller::step:  7000  Max Advance:  7099
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  7200
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 70.25%Progress: 70.50%Progress: 70.75%Progress: 71.25%Progress: 71.50%Progress: 71.75%Progress: 71.75%simulator_controller::step:  7200  Max Advance:  7299
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  7400
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 72.25%Progress: 72.50%Progress: 72.75%Progress: 73.25%Progress: 73.50%Progress: 73.75%Progress: 73.75%simulator_controller::step:  7400  Max Advance:  7499
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  7600
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 74.25%Progress: 74.50%Progress: 74.75%Progress: 75.25%Progress: 75.50%Progress: 75.75%Progress: 75.75%simulator_controller::step:  7600  Max Advance:  7699
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  7800
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 76.25%Progress: 76.50%Progress: 76.75%Progress: 77.25%Progress: 77.50%Progress: 77.75%Progress: 77.75%simulator_controller::step:  7800  Max Advance:  7899
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  8000
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 78.25%Progress: 78.50%Progress: 78.75%Progress: 79.25%Progress: 79.50%Progress: 79.75%Progress: 79.75%simulator_controller::step:  8000  Max Advance:  8099
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  8200
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 80.25%Progress: 80.50%Progress: 80.75%Progress: 81.25%Progress: 81.50%Progress: 81.75%Progress: 81.75%simulator_controller::step:  8200  Max Advance:  8299
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  8400
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 82.25%Progress: 82.50%Progress: 82.75%Progress: 83.25%Progress: 83.50%Progress: 83.75%Progress: 83.75%simulator_controller::step:  8400  Max Advance:  8499
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  8600
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 84.25%Progress: 84.50%Progress: 84.75%Progress: 85.25%Progress: 85.50%Progress: 85.75%Progress: 85.75%simulator_controller::step:  8600  Max Advance:  8699
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  8800
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 86.25%Progress: 86.50%Progress: 86.75%Progress: 87.25%Progress: 87.50%Progress: 87.75%Progress: 87.75%simulator_controller::step:  8800  Max Advance:  8899
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  9000
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 88.25%Progress: 88.50%Progress: 88.75%Progress: 89.25%Progress: 89.50%Progress: 89.75%Progress: 89.75%simulator_controller::step:  9000  Max Advance:  9014
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  9200
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 90.04%Progress: 90.08%Progress: 90.33%Progress: 90.58%Progress: 90.83%Progress: 91.08%Progress: 91.54%Progress: 91.54%simulator_controller::step:  9200  Max Advance:  9299
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  9400
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 92.25%Progress: 92.50%Progress: 92.75%Progress: 93.25%Progress: 93.50%Progress: 93.75%Progress: 93.75%simulator_controller::step:  9400  Max Advance:  9499
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  9600
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 94.25%Progress: 94.50%Progress: 94.75%Progress: 95.25%Progress: 95.50%Progress: 95.75%Progress: 95.75%simulator_controller::step:  9600  Max Advance:  9699
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  9800
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 96.25%Progress: 96.50%Progress: 96.75%Progress: 97.25%Progress: 97.50%Progress: 97.75%Progress: 97.75%simulator_controller::step:  9800  Max Advance:  9899
+simulator_controller::step INPUT:  {}
+simulator_controller::step next_step =  10000
+simulator_controller::get_data INPUT defaultdict(<class 'list'>, {'Control_632-650.0': ['v', 't', 'v', 't']})
+simulator_controller::get_data OUTPUT data = {}
+Progress: 98.25%Progress: 98.50%Progress: 98.75%Progress: 99.25%Progress: 99.50%Progress: 99.50%Simulation finished successfully.
+simulator_pflow::finalize:total execution time =  0.10743799999999977
+simulator_pflow::finalize:total steps =  100
+simulator_pflow::finalize:total events =  800
+simulator_controller::finalize:total execution time =  0.0010749999999999994
+simulator_controller::finalize:total steps =  50
+simulator_controller::finalize:total events =  0
+NS-3 Loop execution time total: 0.0150441
+NS-3 communication time: 0.0104125
+NS-3 total step count: 104
+NS-3 total event count: 604
+Collector::finalize:total execution time =  0.005525999999999998
+Collector::finalize:total steps =  100
+simulation took 0.46164307499930146 seconds
