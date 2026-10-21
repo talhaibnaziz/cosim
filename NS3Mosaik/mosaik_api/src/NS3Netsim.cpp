@@ -233,10 +233,10 @@ NS3Netsim::NS3Netsim() : linkCount(0), sinkPort(0), startTime(0), verbose(0)
   // LogComponentEnable("Socket", LOG_LEVEL_ALL);
   // LogComponentEnable("SocketFactory", LOG_LEVEL_ALL);
   // LogComponentEnable("TcpSocket", LOG_LEVEL_ALL);
-  LogComponentEnable("TcpSocketBase", LOG_LEVEL_ALL);
+  // LogComponentEnable("TcpSocketBase", LOG_LEVEL_ALL);
   // LogComponentEnable("UdpSocket", LOG_LEVEL_ALL);
   // LogComponentEnable("UdpSocketBase", LOG_LEVEL_ALL);
-  LogComponentEnable("TcpL4Protocol", LOG_LEVEL_ALL);
+  // LogComponentEnable("TcpL4Protocol", LOG_LEVEL_ALL);
   // LogComponentEnable("IpL4Protocol", LOG_LEVEL_ALL);
   // LogComponentEnable ("Ipv4L3Protocol", LOG_LEVEL_ALL);
   // LogComponentEnable("EventImpl", LOG_LEVEL_ALL);
