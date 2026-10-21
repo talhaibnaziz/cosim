@@ -467,7 +467,8 @@ SmartgridDefaultSimulatorImpl::RemoveNextEvent(void) const
 }
 
 void
-SmartgridDefaultSimulatorImpl::RunUntil (const Time &checkTime, long long &eventCount)
+SmartgridDefaultSimulatorImpl::RunUntil (const Time &checkTime, long long &eventCount,
+  long long &relevantEventCount, std::queue<DataXCHG> &dataXchgOutput)
 {
 	  NS_LOG_FUNCTION (this);
 	  // Set the current threadId as the main threadId
@@ -478,7 +479,8 @@ SmartgridDefaultSimulatorImpl::RunUntil (const Time &checkTime, long long &event
 	  while (!m_events->IsEmpty () && !m_stop && NextTs () < (uint64_t)checkTime.GetInteger())
 		{
 		  ProcessOneEvent ();
-      eventCount++;
+      if (dataXchgOutput.empty()) eventCount++;
+      else relevantEventCount++;
 		}
 
 	  // If the simulator stopped naturally by lack of events, make a

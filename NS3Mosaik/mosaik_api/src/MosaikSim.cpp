@@ -1077,6 +1077,8 @@ MosaikSim::stop(void)
   std::cout << "NS-3 communication time: " << std::setw(9) << step_time / 1000000000 << std::endl;
   std::cout << "NS-3 total step count: " << step_count << std::endl;
   std::cout << "NS-3 total event count: " << objNetsim->eventCount << std::endl;
+  if (objNetsim->relevantEventCount > 0)
+    std::cout << "NS-3 relevant event count: " << objNetsim->relevantEventCount << std::endl;
 
   return "null";
 }

@@ -524,6 +524,7 @@ class PFlowSim(mosaik_api.Simulator):
         return [{'eid': eid, 'type': model}]
 
     def step(self, time, inputs, max_advance):
+        previous_event_count = self.event_count
         start = datetime.datetime.now()
         self.step_count = self.step_count + 1
         if (self.verbose > 0): print('simulator_pflow::step time = ', time, ' Max Advance = ', max_advance)
@@ -641,6 +642,10 @@ class PFlowSim(mosaik_api.Simulator):
 
         if(self.verbose > 1):
             print('simulator_pflow::step next_step = ', self.next_step)
+
+        # if (previous_event_count < self.event_count):
+        #     print('simulator_pflow::event count: ', previous_event_count, ' -> ',
+        #           self.event_count, ' Time: ', time)
         sys.stdout.flush()
 	
         end = datetime.datetime.now()

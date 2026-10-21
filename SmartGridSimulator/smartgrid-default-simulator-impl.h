@@ -36,6 +36,20 @@
 #include "ptr.h"
 
 #include <list>
+#include <queue>
+#include <string>
+
+/**
+ * \brief Data exchange structure
+ */
+  // Needed for tracking number of external events
+  struct DataXCHG {
+      std::string id;
+      std::string src;
+      std::string dst;
+      std::string val;
+      int64_t time;
+  };
 
 /**
  * \file
@@ -87,7 +101,8 @@ public:
 
   // Smartgrid methods
   uint64_t NextTs (void) const;
-  void RunUntil (const Time &checkTime, long long &eventCount);
+  void RunUntil (const Time &checkTime, long long &eventCount,
+    long long &relevantEventCount, std::queue<DataXCHG> &dataXchgOutput);
   Time Next (void) const;
 
 

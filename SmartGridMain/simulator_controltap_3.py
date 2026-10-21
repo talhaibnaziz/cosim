@@ -82,6 +82,7 @@ class ControlSim(mosaik_api.Simulator):
     
     
     def step(self, time, inputs, max_advance):
+        previous_event_count = self.event_count
         start = datetime.datetime.now()
         self.step_count = self.step_count + 1
         if (self.verbose > 0): print('simulator_controller::step: ', time, ' Max Advance: ', max_advance)
@@ -151,6 +152,10 @@ class ControlSim(mosaik_api.Simulator):
             self.eventQueue.get()
 
         if (self.verbose > 3): print('simulator_controller::step after DATA: ', self.data)
+
+        # if (previous_event_count < self.event_count):
+        #     print('simulator_controller::event count: ', previous_event_count, ' -> ',
+        #           self.event_count, ' Time: ', time)
         
         #--- if there is an event in the future, return next step time
         if not self.eventQueue.empty():

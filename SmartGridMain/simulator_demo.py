@@ -254,7 +254,7 @@ def  create_scenario( world, args ):
             devs_file       = DEVS_RPATH_FILE,
             linkRate        = "512Kbps",
             linkDelay       = "15ms",
-            linkErrorRate   = "0.1",
+            linkErrorRate   = "0.0001",
             start_time      = 0,
             stop_time       = END_TIME,
             random_seed     = args.random_seed,

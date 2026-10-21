@@ -62,17 +62,6 @@
 using namespace std;
 using namespace ns3;
 
-/**
- * \brief Data exchange structure
- */
-struct DataXCHG {
-    string id;
-    string src;
-    string dst;
-    string val;
-    int64_t time;
-};
-
 static vector<DataXCHG> dataXchgInput;  ///< Input data exchange vector
 static queue<DataXCHG> dataXchgOutput; ///< Output data exchange vector
 static queue<uint64_t> dataXchgTime; ///< Output data timestamps
@@ -222,6 +211,7 @@ class NS3Netsim {
   //---
 
   long long eventCount = 0;
+  long long relevantEventCount = 0;
 
 private:
   /**

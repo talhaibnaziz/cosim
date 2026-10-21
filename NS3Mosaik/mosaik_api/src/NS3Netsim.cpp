@@ -233,10 +233,10 @@ NS3Netsim::NS3Netsim() : linkCount(0), sinkPort(0), startTime(0), verbose(0)
   // LogComponentEnable("Socket", LOG_LEVEL_ALL);
   // LogComponentEnable("SocketFactory", LOG_LEVEL_ALL);
   // LogComponentEnable("TcpSocket", LOG_LEVEL_ALL);
-  // LogComponentEnable("TcpSocketBase", LOG_LEVEL_ALL);
+  LogComponentEnable("TcpSocketBase", LOG_LEVEL_ALL);
   // LogComponentEnable("UdpSocket", LOG_LEVEL_ALL);
   // LogComponentEnable("UdpSocketBase", LOG_LEVEL_ALL);
-  // LogComponentEnable("TcpL4Protocol", LOG_LEVEL_ALL);
+  LogComponentEnable("TcpL4Protocol", LOG_LEVEL_ALL);
   // LogComponentEnable("IpL4Protocol", LOG_LEVEL_ALL);
   // LogComponentEnable ("Ipv4L3Protocol", LOG_LEVEL_ALL);
   // LogComponentEnable("EventImpl", LOG_LEVEL_ALL);
@@ -893,6 +893,8 @@ NS3Netsim::runUntil(uint64_t time, string nextStop)
   uint64_t next_step;
   bool relevance = false;
   uint64_t runUntil_time = time;
+  long long previous_event_count = eventCount;
+  long long previous_relevant_event_count = relevantEventCount;
   while(!relevance)
   {
     #ifdef PERFORMANCE_TEST
@@ -901,10 +903,10 @@ NS3Netsim::runUntil(uint64_t time, string nextStop)
     #endif
     //--- "+1" because NS3 executes until a given time (not including)
     if (runUntil_time < (uint64_t)stopTime-1)
-      sim->RunUntil(MilliSeconds(runUntil_time + 1), eventCount);
+      sim->RunUntil(MilliSeconds(runUntil_time + 1), eventCount, relevantEventCount, dataXchgOutput);
     //--- Do not execute end time events to avoid socket wait problem
     else
-      sim->RunUntil(MilliSeconds((uint64_t)stopTime-1), eventCount);
+      sim->RunUntil(MilliSeconds((uint64_t)stopTime-1), eventCount, relevantEventCount, dataXchgOutput);
 
     if (verbose > 3)
     {
@@ -939,6 +941,16 @@ NS3Netsim::runUntil(uint64_t time, string nextStop)
       std::cout << "NS3Netsim::runUntil next event: " << next_step << std::endl;
     }
   }
+
+  // if (previous_event_count < eventCount) {
+  //   cout << "NS3Netsim::event count: " << previous_event_count;
+  //   cout << " -> " << eventCount << " Time: " << time << endl;
+  // }
+  // if (previous_relevant_event_count < relevantEventCount) {
+  //   cout << "NS3Netsim::relevant event count: " << previous_relevant_event_count;
+  //   cout << " -> " << relevantEventCount << " Time: " << time << endl;
+  // }
+
   //--- Return a step time so that Mosaik has to give "stop" command
   if (next_step == (uint64_t)stopTime-1)
     return std::to_string(next_step+1);

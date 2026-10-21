@@ -44,7 +44,7 @@ echo "Building NS-3"
 cd ns-allinone-3.33/ns-3.33
 
 CXX=g++-9 ./waf configure --build-profile=optimized --disable-python
-# ./waf configure --build-profile=debug
+# CXX=g++-9 ./waf configure --build-profile=debug --disable-python
 CXX=g++-9 ./waf
 
 echo "Building NS3Mosaik"
